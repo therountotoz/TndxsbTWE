@@ -8,7 +8,6 @@ from typing import Any
 
 
 def make_constant(value: Any) -> ast.expr:
-    """Generates a new Constant node.
 
     Args:
         value: Value of the node.
@@ -60,7 +59,6 @@ def extract_int_or_none(node: ast.expr) -> int | None:
     else:
         if (
             isinstance(node, ast.Constant)
-            and isinstance(node.value, int)
             and not isinstance(node.n, bool)
         ):
             return node.value
